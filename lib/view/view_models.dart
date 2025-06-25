@@ -1,4 +1,19 @@
-import 'package:get/get.dart';
+class AuthorViewModel{
+  final int id;
+  final String name;
+  final String image;
+  final int recipeCounts;
+  final int likes;
+
+  AuthorViewModel({
+    required this.id,
+    required this.name,
+    required this.image,
+    required this.recipeCounts,
+    required this.likes
+  });
+
+}
 
 class RecipeViewModel {
   final String name;
@@ -16,11 +31,4 @@ class RecipeViewModel {
     required this.difficulty,
     required this.authorID,
   });
-}
-
-class RecipeController extends GetxController {
-
-
-
-
 }

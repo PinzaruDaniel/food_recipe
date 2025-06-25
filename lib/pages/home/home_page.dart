@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:food_recipe/pages/home/widgets/horizontal_section_widget.dart';
+import 'package:food_recipe/pages/home/widgets/popular_recipes_list_widget.dart';
+import 'package:food_recipe/pages/home/widgets/recipe_recom_widget.dart';
+import 'package:food_recipe/pages/home/widgets/user_banner_widget.dart';
+import 'package:get/get.dart';
+
+import 'home_controller.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  HomeController get homeController => Get.find();
+
+  @override
+  void initState() {
+    super.initState();
+    Get.put(HomeController());
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xfff5f5eb),
+      body: SingleChildScrollView(
+
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Obx(() => UserBannerWidget(name: homeController.name.value)),
+                const SizedBox(height: 16,),
+                Padding(
+                  padding: const EdgeInsets.only(top: 130, left: 16, right: 16),
+                  child: RecipeRecommWidget(),
+                  ),
+              ],
+            ),
+
+            PopularRecipesListWidget(retete: ['copypaste','dar','cadou' ],),
+          ],
+        ),
+      ),
+    );
+  }
+}

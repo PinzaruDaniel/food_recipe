@@ -9,8 +9,10 @@ class RecipeRecommWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
+        border: Border.all(width: 0.5, color: Colors.grey.shade300),
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
+
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +53,7 @@ class RecipeRecommWidget extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
 
           // Buttons row
           Row(
@@ -63,22 +65,40 @@ class RecipeRecommWidget extends StatelessWidget {
                     backgroundColor: const Color(0xFFFFF4E5),
                     foregroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                       borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(
+                        width: 0.5,
+                        color: Colors.orangeAccent,
+                      ),
                     ),
                   ),
-                  child: const Text("Get started"),
+                  child: const Text("Get started",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: OutlinedButton(
+                child: ElevatedButton(
                   onPressed: () {},
-                  style: OutlinedButton.styleFrom(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:  Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(
+                        width: 0.5,
+                        color: Colors.grey.shade300,
+                      ),
                     ),
                   ),
-                  child: const Text("Skip"),
+                  child: const Text("Skip",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),),
                 ),
               ),
             ],
