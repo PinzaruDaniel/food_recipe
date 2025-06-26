@@ -1,14 +1,14 @@
 class AuthorViewModel{
   final int id;
   final String name;
-  final String image;
+  final String imageUrl;
   final int recipeCounts;
   final int likes;
 
   AuthorViewModel({
     required this.id,
     required this.name,
-    required this.image,
+    required this.imageUrl,
     required this.recipeCounts,
     required this.likes
   });

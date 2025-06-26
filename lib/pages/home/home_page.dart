@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe/pages/home/widgets/horizontal_section_widget.dart';
 import 'package:food_recipe/pages/home/widgets/popular_recipes_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/recipe_recom_widget.dart';
 import 'package:food_recipe/pages/home/widgets/user_banner_widget.dart';
 import 'package:get/get.dart';
-
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,11 +14,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   HomeController get homeController => Get.find();
-
   @override
   void initState() {
     super.initState();
     Get.put(HomeController());
+    homeController.initRecipe();
+    homeController.initAuthors();
   }
 
   @override
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
 
-            PopularRecipesListWidget(retete: ['copypaste','dar','cadou' ],),
+           Obx(()=> PopularRecipesListWidget(recipes: homeController.recipes.value, authors: homeController.authors.value)) ,
           ],
         ),
       ),

@@ -17,7 +17,6 @@ class RecipeRecommWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Text + Icon row
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

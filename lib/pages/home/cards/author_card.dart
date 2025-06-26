@@ -21,7 +21,7 @@ class AuthorCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 18,
-                backgroundImage: NetworkImage(author.image),),
+                backgroundImage: NetworkImage(author.imageUrl),),
               const SizedBox(width: 8),
               Expanded(
                   child: Text(
