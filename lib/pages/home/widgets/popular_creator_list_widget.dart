@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../view/view_models.dart';
 
-class PopularRecipesListWidget extends StatefulWidget {
-  const PopularRecipesListWidget({super.key, required this.recipes, required this.authors});
+class PopularAuthorsListWidget extends StatefulWidget {
+  const PopularAuthorsListWidget({super.key, required this.recipes, required this.authors});
 
   final List<RecipeViewModel> recipes;
   final List<AuthorViewModel> authors;
 
   @override
-  State<PopularRecipesListWidget> createState() => _PopularRecipesListWidgetState();
+  State<PopularAuthorsListWidget> createState() => _PopularAuthorsListWidgetState();
 }
 
-class _PopularRecipesListWidgetState extends State<PopularRecipesListWidget> {
+class _PopularAuthorsListWidgetState extends State<PopularAuthorsListWidget> {
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30.0),
+      padding: const EdgeInsets.only(top: 40.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,7 +28,7 @@ class _PopularRecipesListWidgetState extends State<PopularRecipesListWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Popular Recipes',
+                  'Popular creator',
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -37,9 +37,9 @@ class _PopularRecipesListWidgetState extends State<PopularRecipesListWidget> {
                 Text(
                   'See all',
                   style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xffc77d0a)
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffc77d0a)
                   ),
                 )
               ],

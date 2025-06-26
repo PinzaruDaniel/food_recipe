@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe/pages/home/widgets/popular_creator_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/popular_recipes_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/recipe_recom_widget.dart';
 import 'package:food_recipe/pages/home/widgets/user_banner_widget.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   HomeController get homeController => Get.find();
+
   @override
   void initState() {
     super.initState();
@@ -27,21 +29,30 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color(0xfff5f5eb),
       body: SingleChildScrollView(
-
         child: Column(
           children: [
             Stack(
               children: [
                 Obx(() => UserBannerWidget(name: homeController.name.value)),
-                const SizedBox(height: 16,),
-                Padding(
-                  padding: const EdgeInsets.only(top: 130, left: 16, right: 16),
-                  child: RecipeRecommWidget(),
-                  ),
+                const SizedBox(height: 16),
+                Padding(padding: const EdgeInsets.only(top: 130, left: 16, right: 16), child: RecipeRecommWidget()),
               ],
             ),
 
-           Obx(()=> PopularRecipesListWidget(recipes: homeController.recipes.value, authors: homeController.authors.value)) ,
+            Obx(
+              () => PopularRecipesListWidget(
+                recipes: homeController.recipes.value,
+                authors: homeController.authors.value,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+            Obx(
+              () => PopularAuthorsListWidget(
+                recipes: homeController.recipes.value,
+                authors: homeController.authors.value,
+              ),
+            ),
           ],
         ),
       ),
