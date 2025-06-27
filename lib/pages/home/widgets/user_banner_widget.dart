@@ -8,12 +8,12 @@ class UserBannerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.only(top: 30,bottom: 120),
+      padding: const EdgeInsets.only(top: 30,bottom: 120, left: 24, right: 24),
       child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.only(top:12),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -22,24 +22,24 @@ class UserBannerWidget extends StatelessWidget {
                           children: [
                             Text('Hello, $name',
                               style : const TextStyle(
-                                fontSize: 36, fontWeight: FontWeight.bold
+                                fontSize: 24, fontWeight: FontWeight.w600,
                               )
                             ),
                             const SizedBox(height: 4),
                             Text('What do you want to cook today?',
-                              style: TextStyle(color: Colors.grey, fontSize: 14)),
+                              style: TextStyle(color: Colors.grey, fontSize: 13)),
                           ],
                         ),
                         Center(
                           child: CircleAvatar(
-                            radius: 24,
+                            radius: 22,
                             backgroundColor: Colors.black,
                             child: Transform.translate(
-                              offset: const Offset(-3, 3), // Move 4 pixels down
+                              offset: const Offset(-3, 3),
                               child: const Icon(
                                 Icons.person,
                                 color: Colors.white,
-                                size: 54,
+                                size: 50,
                               ),
                             ),
                           ),

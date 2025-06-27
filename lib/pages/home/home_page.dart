@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe/pages/home/widgets/featured_list_home_widget.dart';
-import 'package:food_recipe/pages/home/widgets/popular_creator_list_widget.dart';
+import 'package:food_recipe/pages/home/widgets/popular_author_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/popular_recipes_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/recipe_recom_widget.dart';
 import 'package:food_recipe/pages/home/widgets/user_banner_widget.dart';
@@ -36,10 +36,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Obx(() => UserBannerWidget(name: homeController.name.value)),
                 const SizedBox(height: 16),
-                Padding(padding: const EdgeInsets.only(top: 130, left: 16, right: 16), child: RecipeRecommWidget()),
+                Padding(padding: const EdgeInsets.only(top: 125, left: 24, right: 24), child: RecipeRecommWidget()),
               ],
             ),
-
             Obx(
               () => PopularRecipesListWidget(
                 recipes: homeController.recipes.value,
@@ -48,17 +47,32 @@ class _HomePageState extends State<HomePage> {
             ),
 
             const SizedBox(height: 10),
-            Obx(
-              () => PopularAuthorsListWidget(
-                authors: homeController.authors.value,
-              ),
-            ),
-            const SizedBox(height: 10),
+
+                Obx(
+                  () =>
+                      PopularAuthorsListWidget(
+                        title: 'Popular creator',
+                      authors: homeController.authors.value,
+                    ),
+                  ),
+                    const SizedBox(height: 10),
+
+                Obx(
+                  () =>
+                      PopularAuthorsListWidget(
+                        title: 'Featured',
+                      authors: homeController.authors.value,
+                    ),
+                  ),
+
+
+          /*  const SizedBox(height: 10),
             Obx(
                 ()=> FeaturedListHomeWidget(
                   authors:homeController.authors.value,
                 )
-            )
+            ),*/
+
           ],
         ),
       ),

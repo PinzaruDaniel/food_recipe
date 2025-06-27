@@ -15,93 +15,91 @@ class RecipeRecommWidget extends StatelessWidget {
 
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
-                      'Recipes recommendation',
+                      'Recipes recomendation',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
+                        letterSpacing: -0.2,
                       ),
                     ),
-                    SizedBox(height: 6),
+                    SizedBox(height: 2),
                     Text(
                       'Get your personalized recipes recommendation in a 4 steps',
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 16,
+                        fontSize: 12,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
               SvgPicture.asset(
                 'assets/castroncusupa.svg',
                 semanticsLabel: 'Castron',
-                height: 75,
-                width: 50,
+                height: 59,
               ),
             ],
           ),
 
           const SizedBox(height: 16),
 
-          // Buttons row
-          Row(
-            children: [
-              Expanded(
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFF4E5),
-                    foregroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                       borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(
-                        width: 1,
-                        color: Color(0xfff9e2be),
+           Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFFFFF4E5),
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          width: 1,
+                          color: Color(0xfff9e2be),
+                        ),
                       ),
                     ),
+                    child: const Text("Get started",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      letterSpacing: -0.2,
+                    ),),
                   ),
-                  child: const Text("Get started",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),),
                 ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    backgroundColor:  Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(
-                        width: 1,
-                        color: Colors.black12,
+                const SizedBox(width: 12),
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      backgroundColor:  Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          width: 1,
+                          color: Colors.black12,
+                        ),
                       ),
                     ),
+                    child: const Text("Skip",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      letterSpacing: -0.2,
+                    ),),
                   ),
-                  child: const Text("Skip",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
         ],
       ),
     );

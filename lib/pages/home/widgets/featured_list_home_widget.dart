@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../view/view_models.dart';
+import 'header_title_widget.dart';
 
 class FeaturedListHomeWidget extends StatefulWidget {
   const FeaturedListHomeWidget({super.key, required this.authors});
@@ -16,55 +17,41 @@ class _FeaturedListHomeWidgetState extends State<FeaturedListHomeWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30.0),
+      padding: const EdgeInsets.only(top: 20,bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Featured', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                Text(
-                  'See all',
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xffc77d0a)),
-                ),
-              ],
-            ),
-          ),
 
-          SizedBox(height: 3),
+
 
           SizedBox(
-            height: 225,
+            height: 185,
             child: widget.authors.isNotEmpty
                 ? ListView.builder(
+              padding: const EdgeInsets.only(top: 8, left: 24, right: 8),
               scrollDirection: Axis.horizontal,
               itemCount: widget.authors.length,
               itemBuilder: (context, index) {
                 var itemAuthors = widget.authors[index];
                 return Padding(
-                  padding: const EdgeInsets.only(top: 16, left: 16, right: 8),
+                  padding: const EdgeInsets.only(right: 8),
                   child: Container(
-                    width: 200,
+                    width: 170,
                     decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(12),
-                          child: CircleAvatar(radius: 24, backgroundImage: AssetImage(itemAuthors.imageUrl)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          CircleAvatar(radius: 16, backgroundImage: AssetImage(itemAuthors.imageUrl)),
+                          const SizedBox(height: 7),
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 itemAuthors.name,
-                                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: -0.2),
                               ),
                               const SizedBox(height: 20),
                               Row(
@@ -78,7 +65,7 @@ class _FeaturedListHomeWidgetState extends State<FeaturedListHomeWidget> {
                                   SizedBox(width: 8),
                                   Text(
                                     '${itemAuthors.recipeCounts}',
-                                    style: TextStyle(fontSize: 16, color: Colors.grey.shade600),
+                                    style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
                                   ),
                                 ],
                               ),
@@ -94,14 +81,14 @@ class _FeaturedListHomeWidgetState extends State<FeaturedListHomeWidget> {
                                   SizedBox(width: 8),
                                   Text(
                                     '${itemAuthors.likes}',
-                                    style: TextStyle(fontSize: 16, color: Colors.grey.shade600),
+                                    style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
                                   ),
                                 ],
                               ),
                             ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 );
