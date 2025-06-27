@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe/pages/home/widgets/featured_list_home_widget.dart';
 import 'package:food_recipe/pages/home/widgets/popular_creator_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/popular_recipes_list_widget.dart';
 import 'package:food_recipe/pages/home/widgets/recipe_recom_widget.dart';
@@ -49,10 +50,15 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 10),
             Obx(
               () => PopularAuthorsListWidget(
-                recipes: homeController.recipes.value,
                 authors: homeController.authors.value,
               ),
             ),
+            const SizedBox(height: 10),
+            Obx(
+                ()=> FeaturedListHomeWidget(
+                  authors:homeController.authors.value,
+                )
+            )
           ],
         ),
       ),

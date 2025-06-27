@@ -26,6 +26,13 @@ flutter:
   assets:
     - assets/
 
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/Poppins/Poppins-Regular.ttf
+        - asset: assets/Poppins/Poppins-Bold.ttf
+
+
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   # assets:

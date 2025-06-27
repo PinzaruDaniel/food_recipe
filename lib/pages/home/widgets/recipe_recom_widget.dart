@@ -58,16 +58,16 @@ class RecipeRecommWidget extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: ElevatedButton(
+                child: TextButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
+                  style: TextButton.styleFrom(
                     backgroundColor: const Color(0xFFFFF4E5),
                     foregroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                        borderRadius: BorderRadius.circular(20),
                       side: BorderSide(
-                        width: 0.5,
-                        color: Colors.orangeAccent,
+                        width: 1,
+                        color: Color(0xfff9e2be),
                       ),
                     ),
                   ),
@@ -80,15 +80,15 @@ class RecipeRecommWidget extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: ElevatedButton(
+                child: TextButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
+                  style: TextButton.styleFrom(
                     backgroundColor:  Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                       side: BorderSide(
-                        width: 0.5,
-                        color: Colors.grey.shade300,
+                        width: 1,
+                        color: Colors.black12,
                       ),
                     ),
                   ),

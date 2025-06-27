@@ -15,8 +15,8 @@ class HomeController extends GetxController {
   }
   void initAuthors(){
     authors.value=[
-      AuthorViewModel(id: 1, name: 'James Nikidaw', imageUrl: 'assets/profile1.png', recipeCounts: 124, likes: 41391),
-      AuthorViewModel(id: 2, name: 'Mirlam belina', imageUrl: 'assets/profile2.png', recipeCounts: 98, likes: 7323),
+      AuthorViewModel(id: 1, name: 'James Nikidaw', imageUrl: 'assets/profile2.png', recipeCounts: 124, likes: 41391),
+      AuthorViewModel(id: 2, name: 'Mirlam belina', imageUrl: 'assets/profile1.png', recipeCounts: 98, likes: 7323),
     ];
   }
 
