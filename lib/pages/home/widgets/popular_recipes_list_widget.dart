@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:food_recipe/pages/home/widgets/header_title_widget.dart';
 import 'package:food_recipe/pages/home/widgets/recipes_view_widget.dart';
 import '../../../view/view_models.dart';
+import 'header_title_widget.dart';
 
 class PopularRecipesListWidget extends StatefulWidget {
   const PopularRecipesListWidget({super.key, required this.recipes, required this.authors});
@@ -22,7 +22,8 @@ class _PopularRecipesListWidgetState extends State<PopularRecipesListWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeaderTitleWidget(titleKey: 'Popular Recipes', seeAll: (){},),
+          HeaderTitleWidget(titleKey: 'Popular recipes',
+              titleStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: -0.2), seeAll: (){}),
 
           SizedBox(
             height: 295,

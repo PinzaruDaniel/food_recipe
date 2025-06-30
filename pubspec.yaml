@@ -8,6 +8,7 @@ environment:
 
 
 dependencies:
+  readmore: ^3.0.0
   flutter_svg: ^2.0.5
   get: ^4.7.2
   flutter:
