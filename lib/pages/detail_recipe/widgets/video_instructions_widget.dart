@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../view/view_models.dart';
-import '../../home/widgets/header_title_widget.dart';
+import '../../../view/widgets/header_title_widget.dart';
 
 class VideoInstructionsWidget extends StatefulWidget {
   const VideoInstructionsWidget({super.key, required this.recipes});
@@ -16,17 +16,20 @@ class _VideoInstructionsWidgetState extends State<VideoInstructionsWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(top:20,bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeaderTitleWidget(titleKey: 'How to video', titleStyle: TextStyle(fontWeight: FontWeight.bold)),
+          HeaderTitleWidget(
+            titleKey: 'How to video',
+            titleStyle: TextStyle(fontWeight: FontWeight.bold),
+          ),
           SizedBox(height: 8),
           SizedBox(
             height: 160,
             child: widget.recipes.videoSteps.isNotEmpty
                 ? ListView.builder(
-                    padding: const EdgeInsets.only(top: 8, left: 24, right: 8),
+                    padding: const EdgeInsets.only(top: 8, left: 24, right: 18),
                     scrollDirection: Axis.horizontal,
                     itemCount: widget.recipes.videoSteps.length,
                     itemBuilder: (context, index) {
@@ -41,7 +44,6 @@ class _VideoInstructionsWidgetState extends State<VideoInstructionsWidget> {
       ),
     );
   }
-
   Widget _videoItem(VideoStep section) {
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
@@ -52,11 +54,24 @@ class _VideoInstructionsWidgetState extends State<VideoInstructionsWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
-              child: Image(image: AssetImage(section.videoUrl), width: double.infinity, height: 80, fit: BoxFit.cover),
-            ),
+            Stack(
+              children: [
 
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+                  child: Image(
+                    image: AssetImage(section.videoUrl),
+                    width: double.infinity,
+                    height: 80,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 64.0, vertical: 24),
+                  child: Image(image: AssetImage('assets/video-circle.png'), height: 30, width:30),
+                ),
+              ],
+            ),
             Padding(
               padding: EdgeInsets.all(12),
               child: Column(
@@ -75,5 +90,6 @@ class _VideoInstructionsWidgetState extends State<VideoInstructionsWidget> {
         ),
       ),
     );
+
   }
 }

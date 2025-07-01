@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:food_recipe/pages/home/widgets/header_title_widget.dart';
-import 'package:food_recipe/pages/home/widgets/description_author_widget.dart';
 import '../../../view/view_models.dart';
+import 'description_author_widget.dart';
+import 'header_title_widget.dart';
 
 class PopularAuthorsListWidget extends StatefulWidget {
   const PopularAuthorsListWidget({super.key, required this.authors, required this.titleKey});

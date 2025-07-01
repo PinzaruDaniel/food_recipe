@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe/pages/home/widgets/description_recipe_widget.dart';
+
 import '../../../view/view_models.dart';
-import '../../detail_recipe/detail_page.dart';
+import '../../pages/detail_recipe/detail_page.dart';
+import 'description_recipe_widget.dart';
 
 class RecipesListRowsWidget extends StatefulWidget {
   const RecipesListRowsWidget({super.key, required this.itemRecipes, required this.itemAuthors});

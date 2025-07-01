@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe/pages/home/widgets/popular_author_list_widget.dart';
-import 'package:food_recipe/pages/home/widgets/popular_recipes_list_widget.dart';
-import 'package:food_recipe/pages/home/widgets/recipe_recom_widget.dart';
-import 'package:food_recipe/pages/home/widgets/user_banner_widget.dart';
 import 'package:get/get.dart';
-import '../../controllers/home_controller.dart';
+import 'home_controller.dart';
+import '../../view/widgets/popular_author_list_widget.dart';
+import '../../view/widgets/popular_recipes_list_widget.dart';
+import '../../view/widgets/recipe_recom_widget.dart';
+import '../../view/widgets/user_banner_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,13 +29,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color(0xfff5f5eb),
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 60),
         child: Column(
           children: [
+
             Stack(
               children: [
                 Obx(() => UserBannerWidget(name: homeController.name.value)),
-                const SizedBox(height: 16),
-                Padding(padding: const EdgeInsets.only(top: 125, left: 24, right: 24), child: RecipeRecommWidget()),
+                //Align(
+                  //alignment: Alignment.bottomLeft,
+                  //child: RecipeRecommWidget()),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  heightFactor: 1.5,
+                  child: RecipeRecommWidget(),
+                ),
+
+                //Padding(padding: const EdgeInsets.only(top: 125, left: 24, right: 24), child: RecipeRecommWidget()),
               ],
             ),
             Obx(
@@ -45,12 +55,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            const SizedBox(height: 10),
-
             Obx(() => PopularAuthorsListWidget(titleKey: 'Popular creator', authors: homeController.authors.value)),
-            const SizedBox(height: 10),
 
             Obx(() => PopularAuthorsListWidget(titleKey: 'Featured', authors: homeController.authors.value)),
+
           ],
         ),
       ),
